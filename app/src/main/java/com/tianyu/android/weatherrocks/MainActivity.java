@@ -48,8 +48,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openPreferredLocationInMap() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        String locationZipCode = sharedPref.getString(getString(R.string.pref_location_key), "");
+        String locationZipCode = Utility.getPreferredLocation(this);
 
         Uri geoLocation = Uri.parse("geo:0,0?").buildUpon()
                                 .appendQueryParameter("q", locationZipCode)
