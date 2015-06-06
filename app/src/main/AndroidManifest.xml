@@ -38,7 +38,14 @@
 
         <provider
             android:name=".data.WeatherProvider"
-            android:authorities="com.tianyu.android.weatherrocks" />
+            android:authorities="com.tianyu.android.weatherrocks"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.tianyu.android.weatherrocks.READ_DATA"/>
     </application>
 
+    <permission android:name="com.tianyu.android.weatherrocks.READ_DATA"
+        android:protectionLevel="dangerous"
+        android:label="Read Data">
+    </permission>
 </manifest>
