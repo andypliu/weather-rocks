@@ -77,6 +77,7 @@ public class TestDb extends AndroidTestCase {
         assertTrue("Error: Your database was created without both the location entry and weather entry tables",
                 tableNameHashSet.isEmpty());
 
+        c.close();
         // now, do our tables contain the correct columns?
         c = db.rawQuery("PRAGMA table_info(" + WeatherContract.LocationEntry.TABLE_NAME + ")",
                 null);
@@ -102,6 +103,8 @@ public class TestDb extends AndroidTestCase {
         // entry columns
         assertTrue("Error: The database doesn't contain all of the required location entry columns",
                 locationColumnHashSet.isEmpty());
+
+        c.close();
     }
 
     /*

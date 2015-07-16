@@ -4,16 +4,6 @@
 
     <header
         android:fragment="com.tianyu.android.weatherrocks.SettingsActivity$GeneralPreferenceFragment"
-        android:title="@string/pref_header_general" />
-
-    <!--
-    <header
-        android:fragment="com.hanfeng.android.sunshine.SettingsActivity$NotificationPreferenceFragment"
-        android:title="@string/pref_header_notifications" />
-
-    <header
-        android:fragment="com.hanfeng.android.sunshine.SettingsActivity$DataSyncPreferenceFragment"
-        android:title="@string/pref_header_data_sync" />
-     -->
+        android:title="@string/action_settings" />
 
 </preference-headers>

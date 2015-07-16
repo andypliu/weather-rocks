@@ -37,6 +37,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Locale;
 import java.util.Vector;
 
 public class FetchWeatherTask extends AsyncTask<String, Void, Void> {
@@ -280,7 +281,7 @@ public class FetchWeatherTask extends AsyncTask<String, Void, Void> {
             final String DAYS_PARAM = "cnt";
 
             Uri builtUri = Uri.parse(FORECAST_BASE_URL).buildUpon()
-                    .appendQueryParameter(QUERY_PARAM, params[0])
+                    .appendQueryParameter(QUERY_PARAM, params[0] + "," + Locale.getDefault().getCountry())
                     .appendQueryParameter(FORMAT_PARAM, format)
                     .appendQueryParameter(UNITS_PARAM, units)
                     .appendQueryParameter(DAYS_PARAM, Integer.toString(numDays))
@@ -309,7 +310,8 @@ public class FetchWeatherTask extends AsyncTask<String, Void, Void> {
                 // Since it's JSON, adding a newline isn't necessary (it won't affect parsing)
                 // But it does make debugging a *lot* easier if you print out the completed
                 // buffer for debugging.
-                buffer.append(line + "\n");
+                buffer.append(line);
+                buffer.append("\n");
             }
 
             if (buffer.length() == 0) {
