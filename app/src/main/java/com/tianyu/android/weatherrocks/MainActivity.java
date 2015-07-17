@@ -37,7 +37,9 @@ public class MainActivity extends AppCompatActivity implements ForecastFragment.
         } else {
             mTwoPane = false;
         }
-        Log.d(LOG_TAG, "Two Pane? " + mTwoPane);
+
+        ForecastFragment forecastFragment = ((ForecastFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_forecast));
+        forecastFragment.setUseTodayLayout(!mTwoPane);
     }
 
     @Override
