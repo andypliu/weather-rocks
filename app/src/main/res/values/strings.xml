@@ -22,7 +22,7 @@
 
     <string name="pref_units_metric" translatable="false">metric</string>
     <string name="pref_units_imperial" translatable="false">imperial</string>
-    
+
     <!-- Language-specific constants -->
     <string name="today">Today</string>
 
